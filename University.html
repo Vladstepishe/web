@@ -25,15 +25,19 @@
             Ещё мне нравится когда всё продумано до мелочей, все варианты событий. В этом технология реализации СУБД меня поражает.    
             В основном мне нравится работать с алгоритмами, это действительно меня занимает.
         </a>
-        <img class="img-ip" width="50%" src="C:\Users\SystemX\Desktop\onBc86e_eyE.jpg"> -->
+        <img class="img-ip" src="C:\Users\SystemX\Desktop\onBc86e_eyE.jpg"> -->
 
         <script>
             const HpageJSON = `{
-            "Hello": "РАД ВАС ПРИВЕТСТВОВАТЬ НА МОЕЙ СТРАНИЦЕ!!!",
-            "Info": "Здравствуйте, меня зовут <div class='FIO'>Степаненко Владислав</div> Обучаюсь на 3-ем курсе ИВТиПТ. Мне тут хорошо)",
-            "FirstW":"C:\Users\SystemX\.vscode\projects\MySite\University.html",
-            "SecondW":"C:\Users\SystemX\.vscode\projects\MySite\Activ.html",
-            "MyImg": "https://sun9-64.userapi.com/impg/8F6cuujngaYaYEhYAgfiDr35SHVp0KO8GSDODw/wOpqk97D6ew.jpg?size=637x845&quality=95&sign=de7f5ad48fff5c7c0c477171703b4231&type=album"
+            "Info": "В ходе изучения я понял, что обожаю строгие языки. В каком плане? Обожаю точки с запятой и фигурные скобки. 
+            Поэтому мне нравится писать на C++ и Java. В то же время мне очень нравится простота не только в людях, но и в отношении мира. 
+            Python довольно непривередливый товарищ, так что в этом плане он мне симпотизирует даже больше других ЯП. 
+            Ещё мне нравится когда всё продумано до мелочей, все варианты событий. В этом технология реализации СУБД меня поражает.    
+            В основном мне нравится работать с алгоритмами, это действительно меня занимает",
+            "button-href":"",
+            "img1":"",
+            "img2":""
+
         }`
             data = JSON.parse(HpageJSON)
 
@@ -50,8 +54,20 @@
             body.appendChild(img2)
 
             header.appendChild(button)
-            button.setAttribute("class","img-ip")
-            button.setAttribute("img")
+            button.setAttribute("href",data.button-href)
+            button.setAttribute("class","h-button")
+            button.innerText="НА ГЛАВНУЮ!"
+
+            img1.setAttribute("class","img-ip")
+            img1.setAttribute("src",data.img1)
+            
+            Info.setAttribute("class","info")
+            Info.style.cssText=
+                            `font-size: 300%`
+            Info.innerText=data.Info
+
+            img2.setAttribute("class","img-ip")
+            img2.setAttribute("src",data.img2)
 
         </script>
     </body>
