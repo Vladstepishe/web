@@ -13,7 +13,7 @@
     </head>
 
     <body>
-        <header>
+        <!-- <header>
             <a style="font-size: 65%;" href="C:\Users\SystemX\.vscode\projects\MySite\HPage.html" class="h-button">НА ГЛАВНУЮ</a>
         </header>
         <div align="center">
@@ -22,12 +22,61 @@
             <img class="img-university" style="margin-left: 3%;" width="35%" src="C:\Users\SystemX\Desktop\TxbCymlwQO8.jpg">
         </div>
         
-        <br>
         <a style="font-size: 250%;" class="info">
         В моей жизни есть много вещей, которые мне интересны. К счастью или сожалению, программирование не входит в их счёт.        Благодаря тому, что я одарён уникальным тембром, мне нравится работать с ним: подзвучивать ролики, вести мероприятия, петь, выступать на сцене. 
         Кроме того, я играю на гитаре, но на довольно любительском уровне. Мой потолок это играть песни по аккордам, и то простецким боем. 
         Но больше всего мне нравится проводить время с любимыми людьми. Я очень ценю друзей и родных. 
         В будущем хотел бы, чтобы сцена и работа с голосом стали моей работой, но мне вполне хватит счастливой семьи, которая есть и будет ещё больше, и любимых друзей, которые никуда не денутся.
-        </a>
+        </a> -->
+
+        <script>
+            const HpageJSON = `{
+            "Info": "В моей жизни есть много вещей, которые мне интересны. К счастью или сожалению, программирование не входит в их счёт.        Благодаря тому, что я одарён уникальным тембром, мне нравится работать с ним: подзвучивать ролики, вести мероприятия, петь, выступать на сцене. 
+        Кроме того, я играю на гитаре, но на довольно любительском уровне. Мой потолок это играть песни по аккордам, и то простецким боем. 
+        Но больше всего мне нравится проводить время с любимыми людьми. Я очень ценю друзей и родных. 
+        В будущем хотел бы, чтобы сцена и работа с голосом стали моей работой, но мне вполне хватит счастливой семьи, которая есть и будет ещё больше, и любимых друзей, которые никуда не денутся.",
+            "button-href":"",
+            "img1":"",
+            "img2":"",
+            "img3":""
+        }`
+            data = JSON.parse(HpageJSON)
+
+            const body = document.querySelector('body')
+            const header = document.createElement('header')
+            const img1 = document.createElement("img")
+            const img2 = document.createElement("img")
+            const img3 = document.createElement("img")
+            const main = document.createElement("div")
+            const Info = document.createElement("a")
+
+            body.appendChild(header)
+            header.appendChild(button)
+            button.setAttribute("href",data.button-href)
+            button.setAttribute("class","h-button")
+            button.innerText="НА ГЛАВНУЮ!"
+
+            body.appendChild(main)
+            main.setAttribute("align","center")
+            main.appendChild(img1)
+            img1.setAttribute("class","img-university")
+            img1.setAttribute("width","30%")
+
+            main.appendChild(img2)
+            img2.setAttribute("class","img-university")
+            img2.style.cssText=`margin-left: 3%;`
+            img2.setAttribute("width","30%")
+            
+            main.appendChild(img3)
+            img3.setAttribute("class","img-university")
+            img3.style.cssText=`margin-left: 3%;`
+            img3.setAttribute("width","30%")
+            
+            body.appendChild(Info)
+            Info.setAttribute("class","info")
+            Info.style.cssText=` font-size: 250% `
+            Info.innerText=data.Info
+
+        </script>
     </body>
 </html>
