@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Добров</title>
+        <link rel="icon" href="C:\Users\SystemX\Desktop\1676560395_gas-kvas-com-p-detskii-risunok-mordochki-sobaki-25.png" type="image/x-icon">
+        <link rel="stylesheet" href="C:\Users\SystemX\.vscode\projects\MySite\Styles.css">
+    </head>
+
+    <body>
+        <!-- <header> 
+            <a>РАД ВАС ПРИВЕТСТВОВАТЬ НА МОЕЙ СТРАНИЦЕ!!!</a>
+        </header>
+        <div align="center">
+            <div class="Himg"><img style="width: 25%; " src="C:\Users\SystemX\Desktop\ME.jpg"></div>
+            <div class="typewriter">
+            <a class="info">
+                Здравствуйте, меня зовут <div class="FIO">Степаненко Владислав</div> Обучаюсь на 3-ем курсе ИВТиПТ. Мне тут хорошо)
+            </a>
+            </div>
+            <a href="C:\Users\SystemX\.vscode\projects\MySite\University.html" class="f-button">Учёба</a>
+            <a href="C:\Users\SystemX\.vscode\projects\MySite\Activ.html" class="f-button">Хобби</a>
+        </div> -->
+        <script>
+            const HpageJSON = `{
+            "Hello": "РАД ВАС ПРИВЕТСТВОВАТЬ НА МОЕЙ СТРАНИЦЕ!!!",
+            "Info": "Здравствуйте, меня зовут <div class='FIO'>Степаненко Владислав</div> Обучаюсь на 3-ем курсе ИВТиПТ. Мне тут хорошо)",
+            "FirstW":"C:\Users\SystemX\.vscode\projects\MySite\University.html",
+            "SecondW":"C:\Users\SystemX\.vscode\projects\MySite\Activ.html",
+            "MyImg": "https://github.com/Vladstepishe/web/blob/main/imgs/ME.jpg"
+        }`
+            data = JSON.parse(HpageJSON)
+
+            const body = document.querySelector('body')
+            const header = document.createElement('header')
+            const hello = document.createElement('a')
+            const center = document.createElement('div')
+            const Himg = document.createElement('div')
+            const typewriter = document.createElement('div')
+            const text = document.createElement('a')
+            const university = document.createElement('a')
+            const activ = document.createElement('a')
+            
+
+            body.appendChild(header)                //<Шапка>
+            hello.innerHTML=data.Hello              //
+            header.appendChild(hello)               //</Шапка
+
+            body.appendChild(center)                //Главный Див
+            
+            center.appendChild(Himg)
+            center.setAttribute("align","center")
+            Himg.setAttribute("class","Himg")
+            Himg.innerHTML=`<img style="width: 25%; " src="${data.MyImg}" >`
+                                                    //Добавил фото
+
+            center.appendChild(typewriter)
+            typewriter.setAttribute("class","typewriter")
+            typewriter.appendChild(text)
+            text.setAttribute("class","info")
+            text.innerHTML=data.Info
+                                                    //Добавил Текст
+
+            center.appendChild(university)
+            university.setAttribute("href","")
+            university.setAttribute("class","f-button")
+            university.innerText="Учёба"
+
+            university.after(activ)
+            activ.setAttribute("href","")
+            activ.setAttribute("class","f-button")
+            activ.innerText="Хобби"
+
+        </script>
+    </body>
+</html>
